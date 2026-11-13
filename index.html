@@ -1,168 +1,1034 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mi Tienda: abarrotes, ferretería, limpieza y productos para el hogar. Descubre el catálogo y conoce las opciones de recojo o delivery.">
-  <meta name="theme-color" content="#342b27">
-  <title>Mi Tienda | Todo en un solo lugar</title>
-  <link rel="stylesheet" href="estilos.css">
-  <script src="menu.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <div class="topbar"><div class="container topbar-inner"><span>Una tienda para todo lo que necesitas</span><span>✦ Recojo en tienda y delivery a coordinar</span></div></div>
-  <!-- S9 y S11: menú horizontal, submenú vertical y menú hamburguesa -->
-  <header class="site-header" id="inicio">
-    <div class="container nav-row">
-      <a href="#inicio" class="brand" aria-label="Mi Tienda, ir a inicio"><span class="brand-mark" aria-hidden="true">MT</span><span>Mi Tienda<small>más cerca de ti</small></span></a>
-      <button class="hamburger" id="boton-menu" aria-label="Abrir menú" aria-controls="navegacion" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
-      <nav class="nav" id="navegacion" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <details class="nav-details" id="submenu-categorias"><summary>Categorías <span aria-hidden="true">⌄</span></summary>
-          <div class="submenu" aria-label="Categorías de productos">
-            <a href="#productos" data-filter-link="Abarrotes">Abarrotes</a>
-            <a href="#productos" data-filter-link="Ferretería">Ferretería</a>
-            <a href="#productos" data-filter-link="Limpieza">Limpieza</a>
-            <a href="#productos" data-filter-link="Hogar">Hogar</a>
-          </div>
-        </details>
-        <a href="#productos">Productos</a>
-        <a href="#como-comprar">Cómo comprar</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <button class="cart-trigger" id="abrir-carrito" type="button" aria-label="Abrir carrito de compras"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.1a2 2 0 0 0 2 1.6h9.5a2 2 0 0 0 2-1.6L23 6H6"/></svg><span>Mi carrito</span><span class="cart-count" id="cart-count" aria-live="polite">0</span></button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Tienda de abarrotes, ferretería, limpieza y hogar. Recojo o delivery."
+    >
+    <meta name="theme-color" content="#342b27">
+    <title>Mi Tienda | Todo en un solo lugar</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="menu.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>Una tienda para todo lo que necesitas</span>
+        <span>✦ Recojo en tienda y delivery a coordinar</span>
+      </div>
     </div>
-  </header>
-  <main id="contenido">
-    <!-- Portada principal -->
-    <section class="hero container" aria-labelledby="hero-heading">
-      <div class="hero-content"><p class="eyebrow"><span class="eyebrow-line"></span> COMPRA FÁCIL, CERCA DE TI</p>
-        <h1 id="hero-heading">Todo para tu día, <em>en un solo lugar.</em></h1>
-        <p class="hero-copy">Abarrotes, ferretería, limpieza y artículos para el hogar. Explora nuestro catálogo y elige entre recojo en tienda o delivery.</p>
-        <div class="hero-actions"><a class="button button-dark" href="#productos">Explorar productos <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#como-comprar">Cómo comprar</a></div>
-        <div class="hero-details"><span><b>04</b><small>Categorías</small></span><span><b>16</b><small>Productos de muestra</small></span><span><b>02</b><small>Opciones de entrega</small></span></div>
+    <header class="site-header" id="inicio">
+      <div class="container nav-row">
+        <a href="#inicio" class="brand" aria-label="Mi Tienda, ir a inicio">
+          <span class="brand-mark" aria-hidden="true">MT</span>
+          <span>
+            Mi Tienda
+            <small>más cerca de ti</small>
+          </span>
+        </a>
+        <button
+          class="hamburger"
+          id="boton-menu"
+          aria-label="Abrir menú"
+          aria-controls="navegacion"
+          aria-expanded="false"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav" id="navegacion" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <details class="nav-details" id="submenu-categorias">
+            <summary>
+              Categorías
+              <span aria-hidden="true">⌄</span>
+            </summary>
+            <div class="submenu" aria-label="Categorías de productos">
+              <a href="#productos" data-filter-link="Abarrotes">Abarrotes</a>
+              <a href="#productos" data-filter-link="Ferretería">Ferretería</a>
+              <a href="#productos" data-filter-link="Limpieza">Limpieza</a>
+              <a href="#productos" data-filter-link="Hogar">Hogar</a>
+            </div>
+          </details>
+          <a href="#productos">Productos</a>
+          <a href="#como-comprar">Cómo comprar</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <button
+          class="cart-trigger"
+          id="abrir-carrito"
+          type="button"
+          aria-label="Abrir carrito de compras"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.7 13.1a2 2 0 0 0 2 1.6h9.5a2 2 0 0 0 2-1.6L23 6H6"></path>
+          </svg>
+          <span>Mi carrito</span>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
       </div>
-      <div class="hero-media"><img src="imgs/hero.webp" alt="Selección de productos de abarrotes sobre una mesa de madera" width="920" height="1100" fetchpriority="high"><div class="floating-note"><span class="note-icon" aria-hidden="true">✦</span><div><strong>Compra a tu manera</strong><small>Recojo o delivery</small></div></div></div>
-    </section>
-    <div class="trust-strip"><div class="container trust-grid"><span>✳ Variedad en un solo lugar</span><span>◉ Descubre por categorías</span><span>✦ Recojo o delivery a coordinar</span></div></div>
-    <!-- S9: categorías con enlaces y cuatro imágenes -->
-    <section class="section container" id="categorias" aria-labelledby="cats-title"><div class="section-heading"><div><p class="eyebrow">ENCUENTRA LO QUE BUSCAS</p><h2 id="cats-title">Explora nuestras <em>categorías</em></h2></div><p>De lo esencial para tu cocina a las herramientas que necesitas en casa.</p></div>
-      <div class="category-grid">
-        <a class="category-tile" href="#productos" data-filter-link="Abarrotes" aria-label="Ver productos de Abarrotes"><img src="imgs/categoria-abarrotes.webp" alt="Selección de abarrotes, cereales, aceite y conservas" loading="lazy" width="660" height="660"><span class="category-arrow" aria-hidden="true">↗</span></a>
-        <a class="category-tile" href="#productos" data-filter-link="Ferretería" aria-label="Ver productos de Ferretería"><img src="imgs/categoria-ferreteria.webp" alt="Herramientas de ferretería, martillo y taladro" loading="lazy" width="660" height="660"><span class="category-arrow" aria-hidden="true">↗</span></a>
-        <a class="category-tile" href="#productos" data-filter-link="Limpieza" aria-label="Ver productos de Limpieza"><img src="imgs/categoria-limpieza.webp" alt="Productos de limpieza y cuidado del hogar" loading="lazy" width="660" height="660"><span class="category-arrow" aria-hidden="true">↗</span></a>
-        <a class="category-tile" href="#productos" data-filter-link="Hogar" aria-label="Ver artículos para el Hogar"><img src="imgs/categoria-hogar.webp" alt="Artículos de cocina y organización para el hogar" loading="lazy" width="660" height="660"><span class="category-arrow" aria-hidden="true">↗</span></a>
+    </header>
+    <main id="contenido">
+      <section class="hero container" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>
+            COMPRA FÁCIL, CERCA DE TI
+          </p>
+          <h1 id="hero-heading">
+            Todo para tu día,
+            <em>en un solo lugar.</em>
+          </h1>
+          <p class="hero-copy">
+            Abarrotes, ferretería, limpieza y artículos para el hogar. Explora nuestro
+            catálogo y elige entre recojo en tienda o delivery.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#productos">
+              Explorar productos
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-outline" href="#como-comprar">Cómo comprar</a>
+          </div>
+          <div class="hero-details">
+            <span>
+              <b>04</b>
+              <small>Categorías</small>
+            </span>
+            <span>
+              <b>16</b>
+              <small>Productos de muestra</small>
+            </span>
+            <span>
+              <b>02</b>
+              <small>Opciones de entrega</small>
+            </span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img
+            src="imgs/hero.webp"
+            alt="Selección de productos de abarrotes sobre una mesa de madera"
+            width="920"
+            height="1100"
+            fetchpriority="high"
+          >
+          <div class="floating-note">
+            <span class="note-icon" aria-hidden="true">✦</span>
+            <div>
+              <strong>Compra a tu manera</strong>
+              <small>Recojo o delivery</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="trust-strip">
+        <div class="container trust-grid">
+          <span>✳ Variedad en un solo lugar</span>
+          <span>◉ Descubre por categorías</span>
+          <span>✦ Recojo o delivery a coordinar</span>
+        </div>
       </div>
-    </section>
-    <!-- S9: Galería de 16 productos, 4 columnas y 4 filas en escritorio -->
-    <section class="products-section" id="productos" aria-labelledby="products-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">NUESTRO CATÁLOGO</p><h2 id="products-title">Productos para <em>cada día</em></h2></div><p>Elige tus favoritos, agrégalos al carrito y revisa las opciones de entrega.</p></div>
-      <div class="catalog-toolbar"><div class="filter-buttons" role="group" aria-label="Filtrar por categoría"><button class="filter-chip active" type="button" data-filter="Todos" aria-pressed="true">Todos</button><button class="filter-chip" type="button" data-filter="Abarrotes" aria-pressed="false">Abarrotes</button><button class="filter-chip" type="button" data-filter="Ferretería" aria-pressed="false">Ferretería</button><button class="filter-chip" type="button" data-filter="Limpieza" aria-pressed="false">Limpieza</button><button class="filter-chip" type="button" data-filter="Hogar" aria-pressed="false">Hogar</button></div><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="buscar-productos" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"></label></div>
-      <div class="catalog-meta"><span id="resultados-count" aria-live="polite">Mostrando 16 productos</span><span>Precios referenciales para demostración académica</span></div>
-      <div class="product-grid" id="product-grid">
-<article class="product-card" data-product="arroz" data-category="Abarrotes" data-search="arroz blanco abarrotes 1 kg" data-price="7.90" aria-label="Arroz blanco">
-  <div class="product-photo"><img src="imgs/arroz.webp" alt="Bolsa de arroz blanco sobre una mesa de madera" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Arroz blanco</h3><p>Presentación: 1 kg</p>
-  <div class="product-bottom"><strong>S/ 7.90</strong><button class="add-button" type="button" data-add="arroz" aria-label="Agregar Arroz blanco al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="aceite" data-category="Abarrotes" data-search="aceite vegetal abarrotes 1 l" data-price="10.50" aria-label="Aceite vegetal">
-  <div class="product-photo"><img src="imgs/aceite.webp" alt="Botella transparente de aceite vegetal" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Aceite vegetal</h3><p>Presentación: 1 L</p>
-  <div class="product-bottom"><strong>S/ 10.50</strong><button class="add-button" type="button" data-add="aceite" aria-label="Agregar Aceite vegetal al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="fideos" data-category="Abarrotes" data-search="fideos tornillo abarrotes 500 g" data-price="4.50" aria-label="Fideos tornillo">
-  <div class="product-photo"><img src="imgs/fideos.webp" alt="Bolsa de pasta tornillo" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Fideos tornillo</h3><p>Presentación: 500 g</p>
-  <div class="product-bottom"><strong>S/ 4.50</strong><button class="add-button" type="button" data-add="fideos" aria-label="Agregar Fideos tornillo al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="atun" data-category="Abarrotes" data-search="conserva de atún abarrotes 170 g" data-price="6.90" aria-label="Conserva de atún">
-  <div class="product-photo"><img src="imgs/atun.webp" alt="Lata abierta de atún" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Conserva de atún</h3><p>Presentación: 170 g</p>
-  <div class="product-bottom"><strong>S/ 6.90</strong><button class="add-button" type="button" data-add="atun" aria-label="Agregar Conserva de atún al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="galletas" data-category="Abarrotes" data-search="galletas clásicas abarrotes 6 unidades" data-price="3.80" aria-label="Galletas clásicas">
-  <div class="product-photo"><img src="imgs/galletas.webp" alt="Paquete de galletas" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Galletas clásicas</h3><p>Presentación: 6 unidades</p>
-  <div class="product-bottom"><strong>S/ 3.80</strong><button class="add-button" type="button" data-add="galletas" aria-label="Agregar Galletas clásicas al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="leche" data-category="Abarrotes" data-search="leche entera abarrotes 1 l" data-price="5.20" aria-label="Leche entera">
-  <div class="product-photo"><img src="imgs/leche.webp" alt="Envase de leche blanca" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Abarrotes</span><h3>Leche entera</h3><p>Presentación: 1 L</p>
-  <div class="product-bottom"><strong>S/ 5.20</strong><button class="add-button" type="button" data-add="leche" aria-label="Agregar Leche entera al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="martillo" data-category="Ferretería" data-search="martillo de uña ferretería 16 oz" data-price="29.90" aria-label="Martillo de uña">
-  <div class="product-photo"><img src="imgs/martillo.svg" alt="Ilustración de martillo con mango de madera" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Ferretería</span><h3>Martillo de uña</h3><p>Presentación: 16 oz</p>
-  <div class="product-bottom"><strong>S/ 29.90</strong><button class="add-button" type="button" data-add="martillo" aria-label="Agregar Martillo de uña al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="destornillador" data-category="Ferretería" data-search="destornillador ferretería 6 pulgadas" data-price="12.90" aria-label="Destornillador">
-  <div class="product-photo"><img src="imgs/destornillador.svg" alt="Ilustración de destornillador" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Ferretería</span><h3>Destornillador</h3><p>Presentación: 6 pulgadas</p>
-  <div class="product-bottom"><strong>S/ 12.90</strong><button class="add-button" type="button" data-add="destornillador" aria-label="Agregar Destornillador al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="cinta" data-category="Ferretería" data-search="cinta métrica ferretería 5 m" data-price="18.50" aria-label="Cinta métrica">
-  <div class="product-photo"><img src="imgs/cinta.svg" alt="Ilustración de cinta métrica" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Ferretería</span><h3>Cinta métrica</h3><p>Presentación: 5 m</p>
-  <div class="product-bottom"><strong>S/ 18.50</strong><button class="add-button" type="button" data-add="cinta" aria-label="Agregar Cinta métrica al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="foco" data-category="Ferretería" data-search="foco led ferretería 9 w" data-price="11.90" aria-label="Foco LED">
-  <div class="product-photo"><img src="imgs/foco.svg" alt="Ilustración de bombilla LED" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Ferretería</span><h3>Foco LED</h3><p>Presentación: 9 W</p>
-  <div class="product-bottom"><strong>S/ 11.90</strong><button class="add-button" type="button" data-add="foco" aria-label="Agregar Foco LED al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="detergente" data-category="Limpieza" data-search="detergente líquido limpieza 900 ml" data-price="15.50" aria-label="Detergente líquido">
-  <div class="product-photo"><img src="imgs/detergente.svg" alt="Ilustración de envase de detergente líquido" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Limpieza</span><h3>Detergente líquido</h3><p>Presentación: 900 ml</p>
-  <div class="product-bottom"><strong>S/ 15.50</strong><button class="add-button" type="button" data-add="detergente" aria-label="Agregar Detergente líquido al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="desinfectante" data-category="Limpieza" data-search="limpiador multiuso limpieza 1 l" data-price="9.90" aria-label="Limpiador multiuso">
-  <div class="product-photo"><img src="imgs/desinfectante.svg" alt="Ilustración de limpiador en atomizador" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Limpieza</span><h3>Limpiador multiuso</h3><p>Presentación: 1 L</p>
-  <div class="product-bottom"><strong>S/ 9.90</strong><button class="add-button" type="button" data-add="desinfectante" aria-label="Agregar Limpiador multiuso al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="guantes" data-category="Limpieza" data-search="guantes de limpieza limpieza 1 par" data-price="8.50" aria-label="Guantes de limpieza">
-  <div class="product-photo"><img src="imgs/guantes.svg" alt="Ilustración de guantes amarillos de limpieza" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Limpieza</span><h3>Guantes de limpieza</h3><p>Presentación: 1 par</p>
-  <div class="product-bottom"><strong>S/ 8.50</strong><button class="add-button" type="button" data-add="guantes" aria-label="Agregar Guantes de limpieza al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="utensilios" data-category="Hogar" data-search="set de utensilios hogar 3 piezas" data-price="19.90" aria-label="Set de utensilios">
-  <div class="product-photo"><img src="imgs/utensilios.svg" alt="Ilustración de utensilios de cocina" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Hogar</span><h3>Set de utensilios</h3><p>Presentación: 3 piezas</p>
-  <div class="product-bottom"><strong>S/ 19.90</strong><button class="add-button" type="button" data-add="utensilios" aria-label="Agregar Set de utensilios al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="contenedor" data-category="Hogar" data-search="contenedor multiuso hogar 10 l" data-price="24.90" aria-label="Contenedor multiuso">
-  <div class="product-photo"><img src="imgs/contenedor.svg" alt="Ilustración de caja organizadora" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Hogar</span><h3>Contenedor multiuso</h3><p>Presentación: 10 L</p>
-  <div class="product-bottom"><strong>S/ 24.90</strong><button class="add-button" type="button" data-add="contenedor" aria-label="Agregar Contenedor multiuso al carrito">+ Agregar</button></div></div>
-</article>
-<article class="product-card" data-product="lampara" data-category="Hogar" data-search="lámpara de mesa hogar 1 unidad" data-price="39.90" aria-label="Lámpara de mesa">
-  <div class="product-photo"><img src="imgs/lampara.svg" alt="Ilustración de lámpara de mesa" loading="lazy" width="520" height="520"></div>
-  <div class="product-body"><span class="product-category">Hogar</span><h3>Lámpara de mesa</h3><p>Presentación: 1 unidad</p>
-  <div class="product-bottom"><strong>S/ 39.90</strong><button class="add-button" type="button" data-add="lampara" aria-label="Agregar Lámpara de mesa al carrito">+ Agregar</button></div></div>
-</article>
-      </div><div id="sin-resultados" class="empty-search" hidden><span aria-hidden="true">⌕</span><h3>No encontramos coincidencias</h3><p>Intenta buscar otro producto o cambia de categoría.</p><button type="button" class="button button-dark" id="reset-busqueda">Ver todos</button></div>
-    </div></section>
-    <!-- Condiciones de entrega para el proyecto -->
-    <section class="section container" id="como-comprar" aria-labelledby="how-title"><div class="section-heading"><div><p class="eyebrow">TÚ ELIGES</p><h2 id="how-title">Compra como <em>prefieras</em></h2></div><p>Una experiencia sencilla: explora, añade productos y selecciona la forma de entrega.</p></div><div class="delivery-grid">
-      <article class="delivery-card"><span class="delivery-symbol" aria-hidden="true">⌂</span><span class="delivery-number">01 / RECOJO</span><h3>Recojo en tienda</h3><p>Prepara tu lista y selecciona la opción de retiro. La disponibilidad y el horario se coordinan con la tienda.</p><span class="delivery-text">Práctico y directo <span aria-hidden="true">↗</span></span></article>
-      <article class="delivery-card delivery-card-dark"><span class="delivery-symbol" aria-hidden="true">↗</span><span class="delivery-number">02 / DELIVERY</span><h3>Delivery</h3><p>Elige entrega a domicilio. Cobertura, costo y horario están sujetos a coordinación con el negocio.</p><span class="delivery-text">A tu puerta <span aria-hidden="true">↗</span></span></article>
-    </div></section>
-    <section class="closing-cta"><div class="container closing-inner"><div><p class="eyebrow">LISTO PARA EMPEZAR</p><h2>Lo que necesitas, <em>más cerca.</em></h2><p>Conoce el catálogo y prepara tu lista de compra.</p></div><a href="#productos" class="button button-light">Ver catálogo <span aria-hidden="true">↗</span></a></div></section>
-  </main>
-  <!-- S10: pie de página diferente al ejemplo, adaptado a Mi Tienda -->
-  <footer class="site-footer" id="contacto"><div class="container"><div class="footer-grid">
-    <div class="footer-brand"><a class="brand brand-footer" href="#inicio"><span class="brand-mark">MT</span><span>Mi Tienda<small>más cerca de ti</small></span></a><p>Una selección de abarrotes, ferretería, limpieza y hogar en una sola tienda.</p></div>
-    <div><h3>Explorar</h3><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#como-comprar">Cómo comprar</a></div>
-    <div><h3>Atención</h3><p>Recojo en tienda o delivery a coordinar.</p><p>Dirección, horario y contacto: por confirmar con el negocio.</p></div>
-    <div><h3>Redes sociales</h3><p>Las cuentas oficiales aún no han sido proporcionadas.</p><div class="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir plataforma Instagram (no cuenta de la tienda)">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir plataforma Facebook (no cuenta de la tienda)">Facebook ↗</a></div></div>
-  </div><div class="footer-bottom"><span>© 2026 Mi Tienda. Proyecto académico de IHC y Tecnologías Móviles.</span><span>Demostración web: precios y carrito ilustrativos; no se realizan cobros ni pedidos reales.</span></div></div></footer>
-  <!-- Carrito demostrativo, sin procesar pagos -->
-  <div class="cart-overlay" id="cart-overlay" hidden></div>
-  <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1" hidden>
-    <div class="cart-head"><div><span class="eyebrow">TU SELECCIÓN</span><h2 id="cart-title">Mi carrito <span id="cart-items-count"></span></h2></div><button class="icon-close" type="button" id="cerrar-carrito" aria-label="Cerrar carrito">×</button></div>
-    <div class="cart-body"><div id="cart-lines" aria-live="polite"></div></div>
-    <div class="cart-foot"><div class="cart-subtotal"><span>Subtotal referencial</span><strong id="cart-subtotal">S/ 0.00</strong></div><fieldset class="delivery-choice"><legend>Forma de entrega</legend><label><input type="radio" name="entrega" value="Recojo en tienda" checked> Recojo en tienda</label><label><input type="radio" name="entrega" value="Delivery"> Delivery</label></fieldset><p class="delivery-notice" id="entrega-aviso">El retiro se coordina directamente con la tienda.</p><button class="button button-dark button-full" id="copiar-pedido" type="button" disabled>Copiar resumen de compra</button><p class="cart-disclaimer">Demo académica: no envía pedidos, no cobra y no confirma stock. Delivery sujeto a coordinación.</p></div>
-  </aside>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
+      <section class="section container" id="categorias" aria-labelledby="cats-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ENCUENTRA LO QUE BUSCAS</p>
+            <h2 id="cats-title">
+              Explora nuestras
+              <em>categorías</em>
+            </h2>
+          </div>
+          <p>De lo esencial para tu cocina a las herramientas que necesitas en casa.</p>
+        </div>
+        <div class="category-grid">
+          <a
+            class="category-tile"
+            href="#productos"
+            data-filter-link="Abarrotes"
+            aria-label="Ver productos de Abarrotes"
+          >
+            <img
+              src="imgs/categoria-abarrotes.webp"
+              alt="Selección de abarrotes, cereales, aceite y conservas"
+              loading="lazy"
+              width="660"
+              height="660"
+            >
+            <span class="category-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="category-tile"
+            href="#productos"
+            data-filter-link="Ferretería"
+            aria-label="Ver productos de Ferretería"
+          >
+            <img
+              src="imgs/categoria-ferreteria.webp"
+              alt="Herramientas de ferretería, martillo y taladro"
+              loading="lazy"
+              width="660"
+              height="660"
+            >
+            <span class="category-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="category-tile"
+            href="#productos"
+            data-filter-link="Limpieza"
+            aria-label="Ver productos de Limpieza"
+          >
+            <img
+              src="imgs/categoria-limpieza.webp"
+              alt="Productos de limpieza y cuidado del hogar"
+              loading="lazy"
+              width="660"
+              height="660"
+            >
+            <span class="category-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="category-tile"
+            href="#productos"
+            data-filter-link="Hogar"
+            aria-label="Ver artículos para el Hogar"
+          >
+            <img
+              src="imgs/categoria-hogar.webp"
+              alt="Artículos de cocina y organización para el hogar"
+              loading="lazy"
+              width="660"
+              height="660"
+            >
+            <span class="category-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+      <section class="products-section" id="productos" aria-labelledby="products-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">NUESTRO CATÁLOGO</p>
+              <h2 id="products-title">
+                Productos para
+                <em>cada día</em>
+              </h2>
+            </div>
+            <p>
+              Elige tus favoritos, agrégalos al carrito y revisa las opciones de entrega.
+            </p>
+          </div>
+          <div class="catalog-toolbar">
+            <div class="filter-buttons" role="group" aria-label="Filtrar por categoría">
+              <button
+                class="filter-chip active"
+                type="button"
+                data-filter="Todos"
+                aria-pressed="true"
+              >
+                Todos
+              </button>
+              <button
+                class="filter-chip"
+                type="button"
+                data-filter="Abarrotes"
+                aria-pressed="false"
+              >
+                Abarrotes
+              </button>
+              <button
+                class="filter-chip"
+                type="button"
+                data-filter="Ferretería"
+                aria-pressed="false"
+              >
+                Ferretería
+              </button>
+              <button
+                class="filter-chip"
+                type="button"
+                data-filter="Limpieza"
+                aria-pressed="false"
+              >
+                Limpieza
+              </button>
+              <button
+                class="filter-chip"
+                type="button"
+                data-filter="Hogar"
+                aria-pressed="false"
+              >
+                Hogar
+              </button>
+            </div>
+            <label class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m16 16 5 5"></path>
+              </svg>
+              <input
+                id="buscar-productos"
+                type="search"
+                placeholder="Buscar productos..."
+                aria-label="Buscar productos"
+              >
+            </label>
+          </div>
+          <div class="catalog-meta">
+            <span id="resultados-count" aria-live="polite">Mostrando 16 productos</span>
+            <span>Precios referenciales para demostración académica</span>
+          </div>
+          <div class="product-grid" id="product-grid">
+            <article
+              class="product-card"
+              data-product="arroz"
+              data-category="Abarrotes"
+              data-search="arroz blanco abarrotes 1 kg"
+              data-price="7.90"
+              aria-label="Arroz blanco"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/arroz.webp"
+                  alt="Bolsa de arroz blanco sobre una mesa de madera"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Arroz blanco</h3>
+                <p>Presentación: 1 kg</p>
+                <div class="product-bottom">
+                  <strong>S/ 7.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="arroz"
+                    aria-label="Agregar Arroz blanco al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="aceite"
+              data-category="Abarrotes"
+              data-search="aceite vegetal abarrotes 1 l"
+              data-price="10.50"
+              aria-label="Aceite vegetal"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/aceite.webp"
+                  alt="Botella transparente de aceite vegetal"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Aceite vegetal</h3>
+                <p>Presentación: 1 L</p>
+                <div class="product-bottom">
+                  <strong>S/ 10.50</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="aceite"
+                    aria-label="Agregar Aceite vegetal al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="fideos"
+              data-category="Abarrotes"
+              data-search="fideos tornillo abarrotes 500 g"
+              data-price="4.50"
+              aria-label="Fideos tornillo"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/fideos.webp"
+                  alt="Bolsa de pasta tornillo"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Fideos tornillo</h3>
+                <p>Presentación: 500 g</p>
+                <div class="product-bottom">
+                  <strong>S/ 4.50</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="fideos"
+                    aria-label="Agregar Fideos tornillo al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="atun"
+              data-category="Abarrotes"
+              data-search="conserva de atún abarrotes 170 g"
+              data-price="6.90"
+              aria-label="Conserva de atún"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/atun.webp"
+                  alt="Lata abierta de atún"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Conserva de atún</h3>
+                <p>Presentación: 170 g</p>
+                <div class="product-bottom">
+                  <strong>S/ 6.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="atun"
+                    aria-label="Agregar Conserva de atún al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="galletas"
+              data-category="Abarrotes"
+              data-search="galletas clásicas abarrotes 6 unidades"
+              data-price="3.80"
+              aria-label="Galletas clásicas"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/galletas.webp"
+                  alt="Paquete de galletas"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Galletas clásicas</h3>
+                <p>Presentación: 6 unidades</p>
+                <div class="product-bottom">
+                  <strong>S/ 3.80</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="galletas"
+                    aria-label="Agregar Galletas clásicas al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="leche"
+              data-category="Abarrotes"
+              data-search="leche entera abarrotes 1 l"
+              data-price="5.20"
+              aria-label="Leche entera"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/leche.webp"
+                  alt="Envase de leche blanca"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Abarrotes</span>
+                <h3>Leche entera</h3>
+                <p>Presentación: 1 L</p>
+                <div class="product-bottom">
+                  <strong>S/ 5.20</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="leche"
+                    aria-label="Agregar Leche entera al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="martillo"
+              data-category="Ferretería"
+              data-search="martillo de uña ferretería 16 oz"
+              data-price="29.90"
+              aria-label="Martillo de uña"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/martillo.svg"
+                  alt="Ilustración de martillo con mango de madera"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Ferretería</span>
+                <h3>Martillo de uña</h3>
+                <p>Presentación: 16 oz</p>
+                <div class="product-bottom">
+                  <strong>S/ 29.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="martillo"
+                    aria-label="Agregar Martillo de uña al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="destornillador"
+              data-category="Ferretería"
+              data-search="destornillador ferretería 6 pulgadas"
+              data-price="12.90"
+              aria-label="Destornillador"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/destornillador.svg"
+                  alt="Ilustración de destornillador"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Ferretería</span>
+                <h3>Destornillador</h3>
+                <p>Presentación: 6 pulgadas</p>
+                <div class="product-bottom">
+                  <strong>S/ 12.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="destornillador"
+                    aria-label="Agregar Destornillador al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="cinta"
+              data-category="Ferretería"
+              data-search="cinta métrica ferretería 5 m"
+              data-price="18.50"
+              aria-label="Cinta métrica"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/cinta.svg"
+                  alt="Ilustración de cinta métrica"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Ferretería</span>
+                <h3>Cinta métrica</h3>
+                <p>Presentación: 5 m</p>
+                <div class="product-bottom">
+                  <strong>S/ 18.50</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="cinta"
+                    aria-label="Agregar Cinta métrica al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="foco"
+              data-category="Ferretería"
+              data-search="foco led ferretería 9 w"
+              data-price="11.90"
+              aria-label="Foco LED"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/foco.svg"
+                  alt="Ilustración de bombilla LED"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Ferretería</span>
+                <h3>Foco LED</h3>
+                <p>Presentación: 9 W</p>
+                <div class="product-bottom">
+                  <strong>S/ 11.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="foco"
+                    aria-label="Agregar Foco LED al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="detergente"
+              data-category="Limpieza"
+              data-search="detergente líquido limpieza 900 ml"
+              data-price="15.50"
+              aria-label="Detergente líquido"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/detergente.svg"
+                  alt="Ilustración de envase de detergente líquido"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Limpieza</span>
+                <h3>Detergente líquido</h3>
+                <p>Presentación: 900 ml</p>
+                <div class="product-bottom">
+                  <strong>S/ 15.50</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="detergente"
+                    aria-label="Agregar Detergente líquido al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="desinfectante"
+              data-category="Limpieza"
+              data-search="limpiador multiuso limpieza 1 l"
+              data-price="9.90"
+              aria-label="Limpiador multiuso"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/desinfectante.svg"
+                  alt="Ilustración de limpiador en atomizador"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Limpieza</span>
+                <h3>Limpiador multiuso</h3>
+                <p>Presentación: 1 L</p>
+                <div class="product-bottom">
+                  <strong>S/ 9.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="desinfectante"
+                    aria-label="Agregar Limpiador multiuso al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="guantes"
+              data-category="Limpieza"
+              data-search="guantes de limpieza limpieza 1 par"
+              data-price="8.50"
+              aria-label="Guantes de limpieza"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/guantes.svg"
+                  alt="Ilustración de guantes amarillos de limpieza"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Limpieza</span>
+                <h3>Guantes de limpieza</h3>
+                <p>Presentación: 1 par</p>
+                <div class="product-bottom">
+                  <strong>S/ 8.50</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="guantes"
+                    aria-label="Agregar Guantes de limpieza al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="utensilios"
+              data-category="Hogar"
+              data-search="set de utensilios hogar 3 piezas"
+              data-price="19.90"
+              aria-label="Set de utensilios"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/utensilios.svg"
+                  alt="Ilustración de utensilios de cocina"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Hogar</span>
+                <h3>Set de utensilios</h3>
+                <p>Presentación: 3 piezas</p>
+                <div class="product-bottom">
+                  <strong>S/ 19.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="utensilios"
+                    aria-label="Agregar Set de utensilios al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="contenedor"
+              data-category="Hogar"
+              data-search="contenedor multiuso hogar 10 l"
+              data-price="24.90"
+              aria-label="Contenedor multiuso"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/contenedor.svg"
+                  alt="Ilustración de caja organizadora"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Hogar</span>
+                <h3>Contenedor multiuso</h3>
+                <p>Presentación: 10 L</p>
+                <div class="product-bottom">
+                  <strong>S/ 24.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="contenedor"
+                    aria-label="Agregar Contenedor multiuso al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="product-card"
+              data-product="lampara"
+              data-category="Hogar"
+              data-search="lámpara de mesa hogar 1 unidad"
+              data-price="39.90"
+              aria-label="Lámpara de mesa"
+            >
+              <div class="product-photo">
+                <img
+                  src="imgs/lampara.svg"
+                  alt="Ilustración de lámpara de mesa"
+                  loading="lazy"
+                  width="520"
+                  height="520"
+                >
+              </div>
+              <div class="product-body">
+                <span class="product-category">Hogar</span>
+                <h3>Lámpara de mesa</h3>
+                <p>Presentación: 1 unidad</p>
+                <div class="product-bottom">
+                  <strong>S/ 39.90</strong>
+                  <button
+                    class="add-button"
+                    type="button"
+                    data-add="lampara"
+                    aria-label="Agregar Lámpara de mesa al carrito"
+                  >
+                    + Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div id="sin-resultados" class="empty-search" hidden>
+            <span aria-hidden="true">⌕</span>
+            <h3>No encontramos coincidencias</h3>
+            <p>Intenta buscar otro producto o cambia de categoría.</p>
+            <button type="button" class="button button-dark" id="reset-busqueda">
+              Ver todos
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="section container" id="como-comprar" aria-labelledby="how-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TÚ ELIGES</p>
+            <h2 id="how-title">
+              Compra como
+              <em>prefieras</em>
+            </h2>
+          </div>
+          <p>
+            Una experiencia sencilla: explora, añade productos y selecciona la forma de
+            entrega.
+          </p>
+        </div>
+        <div class="delivery-grid">
+          <article class="delivery-card">
+            <span class="delivery-symbol" aria-hidden="true">⌂</span>
+            <span class="delivery-number">01 / RECOJO</span>
+            <h3>Recojo en tienda</h3>
+            <p>
+              Prepara tu lista y selecciona la opción de retiro. La disponibilidad y el
+              horario se coordinan con la tienda.
+            </p>
+            <span class="delivery-text">
+              Práctico y directo
+              <span aria-hidden="true">↗</span>
+            </span>
+          </article>
+          <article class="delivery-card delivery-card-dark">
+            <span class="delivery-symbol" aria-hidden="true">↗</span>
+            <span class="delivery-number">02 / DELIVERY</span>
+            <h3>Delivery</h3>
+            <p>
+              Elige entrega a domicilio. Cobertura, costo y horario están sujetos a
+              coordinación con el negocio.
+            </p>
+            <span class="delivery-text">
+              A tu puerta
+              <span aria-hidden="true">↗</span>
+            </span>
+          </article>
+        </div>
+      </section>
+      <section class="closing-cta">
+        <div class="container closing-inner">
+          <div>
+            <p class="eyebrow">LISTO PARA EMPEZAR</p>
+            <h2>
+              Lo que necesitas,
+              <em>más cerca.</em>
+            </h2>
+            <p>Conoce el catálogo y prepara tu lista de compra.</p>
+          </div>
+          <a href="#productos" class="button button-light">
+            Ver catálogo
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" id="contacto">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand brand-footer" href="#inicio">
+              <span class="brand-mark">MT</span>
+              <span>
+                Mi Tienda
+                <small>más cerca de ti</small>
+              </span>
+            </a>
+            <p>
+              Una selección de abarrotes, ferretería, limpieza y hogar en una sola tienda.
+            </p>
+          </div>
+          <div>
+            <h3>Explorar</h3>
+            <a href="#categorias">Categorías</a>
+            <a href="#productos">Productos</a>
+            <a href="#como-comprar">Cómo comprar</a>
+          </div>
+          <div>
+            <h3>Atención</h3>
+            <p>Recojo en tienda o delivery a coordinar.</p>
+            <p>Dirección, horario y contacto: por confirmar con el negocio.</p>
+          </div>
+          <div>
+            <h3>Redes sociales</h3>
+            <p>Las cuentas oficiales aún no han sido proporcionadas.</p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir plataforma Instagram (no cuenta de la tienda)"
+              >
+                Instagram ↗
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir plataforma Facebook (no cuenta de la tienda)"
+              >
+                Facebook ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Mi Tienda. Proyecto académico de IHC y Tecnologías Móviles.</span>
+          <span>
+            Demostración web: precios y carrito ilustrativos; no se realizan cobros ni
+            pedidos reales.
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div class="cart-overlay" id="cart-overlay" hidden></div>
+    <aside
+      class="cart-panel"
+      id="cart-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cart-title"
+      tabindex="-1"
+      hidden
+    >
+      <div class="cart-head">
+        <div>
+          <span class="eyebrow">TU SELECCIÓN</span>
+          <h2 id="cart-title">
+            Mi carrito
+            <span id="cart-items-count"></span>
+          </h2>
+        </div>
+        <button
+          class="icon-close"
+          type="button"
+          id="cerrar-carrito"
+          aria-label="Cerrar carrito"
+        >
+          ×
+        </button>
+      </div>
+      <div class="cart-body">
+        <div id="cart-lines" aria-live="polite"></div>
+      </div>
+      <div class="cart-foot">
+        <div class="cart-subtotal">
+          <span>Subtotal referencial</span>
+          <strong id="cart-subtotal">S/ 0.00</strong>
+        </div>
+        <fieldset class="delivery-choice">
+          <legend>Forma de entrega</legend>
+          <label>
+            <input type="radio" name="entrega" value="Recojo en tienda" checked>
+            Recojo en tienda
+          </label>
+          <label>
+            <input type="radio" name="entrega" value="Delivery">
+            Delivery
+          </label>
+        </fieldset>
+        <p class="delivery-notice" id="entrega-aviso">
+          El retiro se coordina directamente con la tienda.
+        </p>
+        <button
+          class="button button-dark button-full"
+          id="copiar-pedido"
+          type="button"
+          disabled
+        >
+          Copiar resumen de compra
+        </button>
+        <p class="cart-disclaimer">
+          Demo académica: no envía pedidos, no cobra y no confirma stock. Delivery sujeto
+          a coordinación.
+        </p>
+      </div>
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>
